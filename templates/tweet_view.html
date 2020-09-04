@@ -1,0 +1,12 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+  {{ tweet.posted_by.username }}
+  {{ tweet.date_filed }}
+  {{ tweet.text }}
+</div>
+
+{% endblock content %}

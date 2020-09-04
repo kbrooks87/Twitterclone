@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% for notification in notification_alert %}
+<body style="background:black; color:chartreuse">
+<ul>
+  <li>
+    <a href="/profile/{{ notification.posted_by.id }}/">{{ notification.posted_by.username }}</a> -
+    <a href="/tweet/{{ notification.text.id }}/">{{ notification.text.date_filed }}</a>
+  </li>
+  <ul>
+    <li>
+      {{ notification.text }}
+    </li>
+  </ul>
+</ul>
+</body>
+{% endfor %}
+
+{% endblock content %}
