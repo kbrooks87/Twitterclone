@@ -22,7 +22,7 @@
   <h1>{{profile.username}}'s Profile</h1>
   <h2>Tweets</h2>
 {% for tweet in tweets %}
-  <ul style="color:cyan">
+  <ul>
       <h3>@{{tweet.twitter_user}}<br>{{tweet.tweet}}</h3>
   </ul>
 {% endfor %}
