@@ -6,7 +6,7 @@ from tweet.models import TweetModel
 
 from notification.models import NotificationModel
 
-from authentication.views import login_view
+from authentication.views import LoginView
 
 from .forms import SignUpForm
 
