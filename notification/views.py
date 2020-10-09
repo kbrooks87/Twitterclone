@@ -24,5 +24,3 @@ class NotificationView(TemplateView):
     return render(request, 'notifications.html', {
       'notification_alert': notification_alert[::-1]}
     )
-
-  
