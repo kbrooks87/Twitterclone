@@ -6,14 +6,12 @@ from tweet.models import TweetModel
 
 from notification.models import NotificationModel
 
-from authentication.views import login_view
+from authentication.views import LoginView
 
 from .forms import SignUpForm
 
 from .models import TwitterUser
 
-# Received help from Matt Perry and Peter Marsh on many little errors throughout the code.
-# Got guidance from StackOverFlow about ManyToManyField
 
 @login_required
 def index(request):
@@ -25,10 +23,8 @@ def index(request):
       [notified for notified in NotificationModel.objects.filter(user_id=request.user.id) if not notified.time_viewed]
       )
   return render(request, 'index.html',
-      {
-        "tweets": user_following_tweets,
-        "count": count
-      })
+      { "tweets": user_following_tweets,
+        "count": count})
 
 
 def create_user(request):
@@ -53,9 +49,7 @@ def user_profile(request, user_id):
   following = request.user.following.all()
   following_list = list(following)
   return render(request, "user_profile.html",
-    {
-      "profile": profile,
-      "tweets": tweets,
+    { "profile": profile, "tweets": tweets,
       "user_following": following_list
     }
   )
